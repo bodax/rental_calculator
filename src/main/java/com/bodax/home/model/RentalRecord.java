@@ -1,4 +1,3 @@
-// src/main/java/com/bodax/home/model/RentalRecord.java
 package com.bodax.home.model;
 
 import com.bodax.home.enums.AdditionalService;
@@ -37,11 +36,6 @@ public class RentalRecord {
         this.cityKm = builder.cityKm;
         this.gubristPassages = builder.gubristPassages;
     }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
 
     public String getLabel() {
         return label;

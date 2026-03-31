@@ -59,7 +59,6 @@ public class RentalDataParser {
         var service = AdditionalService.fromName(normalized)
                 .orElseThrow(() -> new IllegalArgumentException("Unknown service type: " + finalInput));
 
-
         if (service == AdditionalService.GUBRIST_TUNNEL) {
             builder.gubristPassages(count);
             return Collections.singletonList(service);

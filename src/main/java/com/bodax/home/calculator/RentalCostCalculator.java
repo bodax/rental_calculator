@@ -10,7 +10,6 @@ import com.bodax.home.service.AdditionalServiceFee;
 
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -50,31 +49,21 @@ public class RentalCostCalculator {
     }
 
     private void calculateAdditionalServices(RentalRecord record, RentalReceipt rentalReceipt) {
-//        Map<AdditionalService, Integer> serviceCounts = record.getAdditionalServices().stream().map(service
-//                -> {
-//
-//        })
-
-
-        // Resolve unique fees
         Set<AdditionalService> uniqueServices = new HashSet<>(record.getAdditionalServices());
         List<AdditionalServiceFee> fees = serviceFactory.resolveAll(uniqueServices);
 
         fees.forEach(f -> {
-            // Count occurrences in the original list
             long count = record.getAdditionalServices().stream()
                     .filter(s -> s == f.getServiceType())
                     .count();
 
-            // Calculate single unit fee
             double unitAmount = f.calculate(record);
-
             double total = unitAmount * count;
 
             if (total > 0) {
                 String label = f.getLabel();
                 if (count > 1) {
-                    label += " x" + count; // show multiplier
+                    label += " x" + count;
                 }
                 rentalReceipt.addLineItem(label, total);
             }
@@ -89,5 +78,4 @@ public class RentalCostCalculator {
             }
         });
     }
-
 }

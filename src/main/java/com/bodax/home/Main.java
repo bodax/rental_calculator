@@ -30,8 +30,6 @@ public class Main {
             records.add(record);
         }
 
-
-        // --- Calculate and print ---
         List<RentalReceipt> rentalReceipts = calculator.calculateAll(records);
         SummaryPrinter printer = new SummaryPrinter();
         System.out.println(printer.print(rentalReceipts));
