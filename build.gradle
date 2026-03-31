@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.bodax.home'
+version = '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'com.bodax.home.Main'
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.bodax.home.Main'
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
