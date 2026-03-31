@@ -20,7 +20,7 @@ cd build/libs
 ```
 
 ```bash
- java -jar .\rent_calculator-0.1.jar 'E-Van, 95 km, 20 kWh, Motorway Vignette, Gubrist Tunnel x3', 'Compact Van, 40 km, 5 liters','Large Van, 180 km, 15 liters, City Congestion Fee 30 km city driving'
+ java -jar rent_calculator-0.1.jar 'E-Van, 95 km, 20 kWh, Motorway Vignette, Gubrist Tunnel x3', 'Compact Van, 40 km, 5 liters', 'Large Van, 180 km, 15 liters, City Congestion Fee 30 km city driving'
  ```
 
 
